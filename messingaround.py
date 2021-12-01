@@ -15,6 +15,7 @@ directory_output = r"C:\Users\ss38\Rafa AI stuff"
 feature = 'phase'
 keywords = ['1brass','1brass_on_ferrite','1co_on_ferrite','1copper','1ferrite','1ferrite_on_co','1steel','2co_onferrite','no_plates']
 Picture_generator_Directory_saver(keywords,directory_input,directory_output,feature)
+a = 10
 
 
 
