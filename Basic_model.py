@@ -14,7 +14,7 @@ from tensorflow import keras
 from tensorflow.keras import layers
 from tensorflow.keras.models import Sequential
 from keras import regularizers
-directory = r'C:\Users\ss38\Rafa AI stuff\210104_trimmed\freq_29.00_ampl_phase'
+directory = r"C:\Users\ss38\Rafa AI stuff\210104_trimmed\freq_29.00_ampl_phase"
 
 classes = ['1brass','1brass_on_ferrite','1co_on_ferrite','1copper','1ferrite','1ferrite_on_co','1steel','2co_on_ferrite','no_plates']
 batch_size = 32
@@ -55,20 +55,15 @@ model.compile(optimizer='adam',
 model.summary()
 epochs=10
 
-# #model.fit(
-#   train_ds,
-#   validation_data=val_ds,
-#   epochs=epochs
-# )
-
-
-
 history = model.fit(
   train_ds,
   validation_data=val_ds,
   epochs=epochs
 )
 
+
+# filename = '0degrees_model.sav'
+# joblib.dump(model,filename)
 acc = history.history['accuracy']
 val_acc = history.history['val_accuracy']
 
@@ -76,7 +71,7 @@ loss = history.history['loss']
 val_loss = history.history['val_loss']
 
 epochs_range = range(epochs)
-tf.keras.models.save_model(model, 'basic_model')
+tf.keras.models.save_model(model, 'basic_model_29.00')
 
 plt.figure(figsize=(8, 8))
 plt.subplot(1, 2, 1)
